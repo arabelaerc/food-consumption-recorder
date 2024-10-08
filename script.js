@@ -107,8 +107,11 @@ function updateMonthlySummary() {
     }
 }
 
-function agregarProducto() {
+function agregarOthers() {
     const nuevoProducto = document.getElementById("nuevoProducto").value;
+    const nuevoComercio = document.getElementById("nuevoComercio").value;
+    const nuevaCategoria = document.getElementById("nuevaCategoria").value;
+    
     if (nuevoProducto) {
         const productoSelect = document.getElementById("producto");
         const option = document.createElement("option");
@@ -118,10 +121,6 @@ function agregarProducto() {
         alert(`Producto "${nuevoProducto}" agregado.`);
         document.getElementById("nuevoProducto").value = ''; // Limpiar campo
     }
-}
-
-function agregarComercio() {
-    const nuevoComercio = document.getElementById("nuevoComercio").value;
     if (nuevoComercio) {
         const comercioSelect = document.getElementById("comercio");
         const option = document.createElement("option");
@@ -131,10 +130,6 @@ function agregarComercio() {
         alert(`Comercio "${nuevoComercio}" agregado.`);
         document.getElementById("nuevoComercio").value = ''; // Limpiar campo
     }
-}
-
-function agregarCategoria() {
-    const nuevaCategoria = document.getElementById("nuevaCategoria").value;
     if (nuevaCategoria) {
         const categoriaSelect = document.getElementById("categoria");
         const option = document.createElement("option");
@@ -248,4 +243,3 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-
