@@ -1,0 +1,47 @@
+.food-container {
+    gap: 24px;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+    max-width: 500px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.food-buttons {
+    gap: 24px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.food-container button {
+    width: 50%;
+}
+
+.food-container .food_form {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.food-container .food_form button {
+    margin: 0 auto;
+}
+
+.food-container .food_form input {
+    width: 100%;
+}
+
+.food_table {
+    width: 80%;
+    overflow-x: scroll;
+    margin-bottom: 21px !important;
+}
+
+#monthly-summary {
+    width: 100%;
+}
+
+table tr th {
+    background-color: white;
+}

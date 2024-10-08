@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Gastos de Comida 🍖🫘🥕</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="food.container.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="container">Registro de Gastos de Comida 🍖🫘🥕</h1>
+    <div class="food-container">
+        <form class="food_form" id="food-form">
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" required>
+            <label for="producto">Producto:</label>
+            <select id="producto" required>
+                <option value="">Seleccione un producto</option>
+            </select>
+            <label for="precio">Precio:</label>
+            <input type="number" id="precio" required>
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" required>
+            <label for="comercio">Comercio:</label>
+            <select id="comercio" required>
+                <option value="">Seleccione un comercio</option>
+                <option value="Gadis">Gadis</option>
+                <option value="Primark">Primark</option>
+                <option value="AlCampo">AlCampo</option>
+                <option value="CareFour">CareFour</option>
+                <option value="Sprinter">Sprinter</option>
+                <option value="Eroski">Eroski</option>
+                <option value="Corte Íngles">Corte Íngles</option>
+                <option value="Frutas Katuxa">Frutas Katuxa</option>
+                <option value="Lefties">Lefties</option>
+                <option value="HYM">HYM</option>
+                <option value="Arenal">Arenal</option>
+                <option value="Lidl">Lidl</option>
+            </select>
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" required>
+                <option value="">Seleccione una categoría</option>
+                <option value="Frutas">Frutas</option>
+                <option value="Verduras">Verduras</option>
+                <option value="Carnes">Carnes</option>
+                <option value="Lácteos">Lácteos</option>
+                <option value="Snacks">Snacks</option>
+            </select>
+            <label for="moneda">Moneda:</label>
+            <select id="moneda" required>
+                <option value="EUR">Euros (€)</option>
+                <option value="USD">Dólares ($)</option>
+                <option value="PEN">Soles (S/.)</option>
+            </select>
+            <button type="submit">Agregar Gasto</button>
+        </form>
+        <button id="openModal" class="food_button">Agregar Nuevo Producto</button> <!-- Botón para abrir el modal -->
+    </div>
+
+    <div class="food_table container">
+        <h2>Resumen Mensual</h2>
+        <div id="monthly-summary"></div>
+    
+        <h2>Tabla de Gastos</h2>
+        <table id="food-table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Comercio</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    
+        <div id="charts-container"></div> <!-- Contenedor para gráficos -->
+    </div>
+
+    <div class="food-buttons container">
+        <button id="download-xlsx" class="blue">Descargar XLSX por mes</button>
+        <button id="clear-storage" class="blue">Borrar Datos</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <h2>Agregar Nuevo Producto</h2>
+            <form id="add-lists-form">
+                <label for="nuevoProducto">Nuevo Producto:</label>
+                <input type="text" id="nuevoProducto" placeholder="Producto" required>
+
+                <label for="nuevoComercio">Nuevo Comercio:</label>
+                <input type="text" id="nuevoComercio" placeholder="Comercio" required>
+
+                <label for="nuevaCategoria">Nueva Categoría:</label>
+                <input type="text" id="nuevaCategoria" placeholder="Categoría" required>
+
+                <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script> <!-- Tu script debe estar aquí -->
+</body>
+
+</html>
