@@ -26,7 +26,7 @@
                 <option value="">Seleccione un producto</option>
             </select>
             <label for="precio">Precio:</label>
-            <input type="number" id="precio" required>
+            <input type="number" id="precio" step="0.01" id="precio" required>
             <label for="cantidad">Cantidad:</label>
             <input type="number" id="cantidad" required>
             <label for="comercio">Comercio:</label>
@@ -62,7 +62,7 @@
             </select>
             <button type="submit">Agregar Gasto</button>
         </form>
-        <button id="openModal" class="food_button">Agregar Nuevo Producto</button> <!-- Botón para abrir el modal -->
+        <button id="openModal" class="food_button">Agregar nuevos productos, comercios o categorías </button> <!-- Botón para abrir el modal -->
     </div>
 
     <div class="food_table container">
@@ -97,18 +97,18 @@
     <div id="productModal" class="modal">
         <div class="modal-content">
             <span class="close-button" id="closeModal">&times;</span>
-            <h2>Agregar Nuevo Producto</h2>
+            <h2>Agregar nuevo</h2>
             <form id="add-lists-form">
                 <label for="nuevoProducto">Nuevo Producto:</label>
-                <input type="text" id="nuevoProducto" placeholder="Producto" required>
+                <input type="text" id="nuevoProducto" placeholder="Producto">
 
                 <label for="nuevoComercio">Nuevo Comercio:</label>
-                <input type="text" id="nuevoComercio" placeholder="Comercio" required>
+                <input type="text" id="nuevoComercio" placeholder="Comercio">
 
                 <label for="nuevaCategoria">Nueva Categoría:</label>
-                <input type="text" id="nuevaCategoria" placeholder="Categoría" required>
+                <input type="text" id="nuevaCategoria" placeholder="Categoría">
 
-                <button type="button" onclick="agregarProducto()">Agregar Producto</button>
+                <button type="button" onclick="agregarOthers()">Agregar</button>
             </form>
         </div>
     </div>
